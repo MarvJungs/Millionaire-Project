@@ -14,6 +14,10 @@ public class Question
         answers[1] = ans2;
         answers[2] = ans3;
         answers[3] = ans4;
+        if(indexCorrect < 0 || indexCorrect > 3)
+        {
+            throw new RuntimeException("Index must be between 0 and 3");
+        }
         this.indexCorrect = indexCorrect;
     }
 
@@ -34,8 +38,7 @@ public class Question
 
     public String toString()
     {
-        StringBuilder s = new StringBuilder();
-        s = new StringBuilder(getQuestion() + "\n");
+        StringBuilder s = new StringBuilder(getQuestion() + "\n");
         for(int i = 0; i < 4; i++)
         {
             s.append(getAnswer(i)).append("\n");
