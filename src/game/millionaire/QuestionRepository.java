@@ -1035,7 +1035,7 @@ public class QuestionRepository
                 "5",
                 "10",
                 1));
-        questions.add(new Question("Who is Windows Marv's main rival in the video series of the same name?",
+        questions.add(new Question("Who is Windows Marv's millionaireTesting rival in the video series of the same name?",
                 "Galaxtic",
                 "aglab2",
                 "katze789",
@@ -1149,7 +1149,7 @@ public class QuestionRepository
                 "Bowser",
                 "Timerock",
                 1));
-        questions.add(new Question("How many total coins are there in all main courses in Lug's Delightful Dioramas?",
+        questions.add(new Question("How many total coins are there in all millionaireTesting courses in Lug's Delightful Dioramas?",
                 "667",
                 "721",
                 "834",
@@ -1241,6 +1241,35 @@ public class QuestionRepository
                 0));
     }
 
+    public void addQuestion(Question question)
+    {
+        questions.add(question);
+    }
+
+    public Question deleteQuestion(int index)
+    {
+        return questions.remove(index);
+    }
+
+    public void clearList()
+    {
+        questions.clear();
+    }
+
+    public int getQuestionIndex(String s)
+    {
+        int i = 0;
+        for (Question q: questions)
+        {
+             if(s.equals(q.getQuestion()))
+             {
+                 return i;
+             }
+             i++;
+        }
+        return -1;
+    }
+
     public Question getRandomQuestion()
     {
         return questions.get(r.nextInt(questions.size()));
@@ -1249,5 +1278,10 @@ public class QuestionRepository
     public ArrayList<Question> getQuestions()
     {
         return questions;
+    }
+
+    public Random getRandom()
+    {
+        return r;
     }
 }
