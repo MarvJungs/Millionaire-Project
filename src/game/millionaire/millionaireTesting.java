@@ -15,5 +15,13 @@ public class millionaireTesting
         {
             System.out.println(qs.getQuestionIndex(qs.getQuestions().get(qs.getRandom().nextInt(qs.getQuestions().size())).getQuestion()));
         }
+
+        for(int i = 0; i < 15; i++)
+        {
+            Question q = qs.getRandomQuestion();
+            System.out.println(q.toString());
+            qs.deleteQuestion(qs.getQuestionIndex(q.getQuestion()));
+            System.out.println(qs.getQuestions().size());
+        }
     }
 }
